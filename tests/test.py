@@ -1,3 +1,4 @@
+from tabnanny import check
 import unittest
 import sys
 import os
@@ -7,6 +8,8 @@ from selenium.webdriver.chrome.service import Service
 from pages.career import CareerPage
 from pages.home_page import HomePage
 from pages.base import BasePage
+from pages.lever import lever_check
+from pages.lever_check import LeverCheck
 
 class InsiderCareerTest(unittest.TestCase):
 
@@ -17,6 +20,8 @@ class InsiderCareerTest(unittest.TestCase):
         self.home_page = HomePage(self.driver)
         self.career = CareerPage(self.driver)
         self.base_page = BasePage(self.driver)
+        self.lever = lever_check(self.driver)
+        self.lever_check = LeverCheck(self.driver)
         
         
 
@@ -25,6 +30,14 @@ class InsiderCareerTest(unittest.TestCase):
             self.home_page.go_to_url()
             
             self.career.click_explore()
+
+            self.lever.apply_filters()
+            self.lever.click_qajob()
+
+
+            self.lever_check.check_lever()
+
+            
             
         except Exception as e:
             self.home_page.take_screenshot("hata_anlik_goruntu")
