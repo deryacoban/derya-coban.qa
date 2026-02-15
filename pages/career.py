@@ -12,4 +12,4 @@ class CareerPage(BasePage):
         print("is butonuna tikladim bea.")
         self.scroll_to_element(self.software_development_link)
         self.js_click(self.software_development_link)
-        print("software development butonuna tikladim bea.")
+        print("software development kartina tikladim.")

@@ -32,6 +32,7 @@ class InsiderCareerTest(unittest.TestCase):
             self.career.click_explore()
 
             self.lever.apply_filters()
+            self.lever.check_filters()
             self.lever.click_qajob()
 
 
@@ -41,7 +42,7 @@ class InsiderCareerTest(unittest.TestCase):
             
         except Exception as e:
             self.home_page.take_screenshot("hata_anlik_goruntu")
-            print(f" Test başarısız! Hata: {e}")
+            print(f" test basarisiz ekran goruntusunu kontrol edin Hata: {e}")
             raise e 
         """def test_career(self):
             try:

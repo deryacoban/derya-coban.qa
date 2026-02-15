@@ -9,4 +9,4 @@ class LeverCheck(BasePage):
 
     def check_lever(self):
         WebDriverWait(self.driver, 10).until(EC.url_contains("lever.co"))
-        print("Lever sayfasina gectim bea.")
+        print("Lever sayfasina gectim yani form acildi.")
