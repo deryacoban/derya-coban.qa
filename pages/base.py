@@ -10,20 +10,13 @@ class BasePage:
     def __init__(self, driver):
         self.driver = driver
         self.wait = WebDriverWait(self.driver, 15)
-    #  scrolll into view
+    #  scroll into view
     def scroll_to_element(self, locator):
         element = self.wait.until(EC.presence_of_element_located(locator))
         self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
         time.sleep(1)
 
-#    def select_from_dropdown(self, option_text):
 
-#            target_option = self.driver.find_element(By.XPATH, f"//*[text()='{option_text}']")
-#            self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", target_option)
-#            target_option.click()
-        
-        
-        
     def find_element(self, locator):
         return self.wait.until(EC.presence_of_element_located(locator))
 #tıkllama
@@ -39,9 +32,7 @@ class BasePage:
             os.makedirs("screenshots")
         self.driver.save_screenshot(f"screenshots/{name}.png")
     # wait
-    def __init__(self, driver):
-        self.driver = driver
-        self.wait = WebDriverWait(self.driver, 15)
+
 
     # locator bekleme 
     def wait_and_click(self, locator):

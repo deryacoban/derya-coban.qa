@@ -10,18 +10,18 @@ class lever_check(BasePage):
 #filtre uygulama
     def apply_filters(self):
         self.js_click(self.location_filter)
-        time.sleep(2)
+        time.sleep(1)
         self.scroll_to_element((By.XPATH, "//a[@class='category-link' and text()='Istanbul, Turkiye']"))
-        time.sleep(2)
+        time.sleep(1)
         self.js_click((By.XPATH, "//a[@class='category-link' and text()='Istanbul, Turkiye']"))
-        time.sleep(2)
+        time.sleep(1)
         print("konum için tiklayabildim.")
         self.js_click(self.team_filter)
-        time.sleep(2)
+        time.sleep(1)
         self.scroll_to_element((By.XPATH, "//a[@class='category-link' and text()='Quality Assurance']"))
-        time.sleep(2)
+        time.sleep(1)
         self.js_click((By.XPATH, "//a[@class='category-link' and text()='Quality Assurance']"))
-        time.sleep(2)
+        time.sleep(1)
         self.check_filters()
 
     def check_filters(self):
@@ -49,5 +49,5 @@ class lever_check(BasePage):
 
     def click_qajob(self):
         self.js_click((By.XPATH, "//a[contains(@class, 'posting-btn-submit') and text()='Apply']"))
-        time.sleep(2)
+        time.sleep(1)
         print("QA jobuna tiklayabildim.")
